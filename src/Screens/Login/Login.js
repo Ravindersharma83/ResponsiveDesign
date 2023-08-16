@@ -51,7 +51,7 @@ const Login = ({navigation}) => {
     
     <View style={styles.bottomView}>
         <Text>Not a member ? </Text>
-        <TouchableOpacity onPress={() => navigation.navigate(navigationStrings.REGISTER)}>
+        <TouchableOpacity onPress={() => navigation.navigate(navigationStrings.CHOOSE_ACCOUNT)}>
             <Text style={{fontWeight:'bold',color:colors.black}}>Join Now</Text>
         </TouchableOpacity>
     </View>
