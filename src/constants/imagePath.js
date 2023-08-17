@@ -7,4 +7,10 @@ export default {
     icForward : require('../assets/images/forward.png'),
     lock : require('../assets/images/lock.png'),
 
+    home : require('../assets/images/home.png'),
+    booking : require('../assets/images/booking.png'),
+    profile : require('../assets/images/profile.png'),
+    notification : require('../assets/images/notification.png'),
+    location : require('../assets/images/location.png'),
+
 }

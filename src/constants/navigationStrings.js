@@ -7,5 +7,9 @@ export default {
     HOME:"Home",
     TAB_ROUTES:"tabRoutes",
     PROFILE:"Profile",
+    BOOKING:"Booking",
+    TAB_ROUTES:"tabRoutes",
+    PROFILE:"Profile",
+    EDIT_PROFILE:"EditProfile",
     BOOKING:"Booking"
 }

@@ -7,6 +7,7 @@ import imagePath from '../constants/imagePath'
 const ButtonComp = ({
     btnText,
     btnStyle={},
+    btnTextStyle={},
     onPress,
     img
 }) => {
@@ -16,7 +17,7 @@ const ButtonComp = ({
         style={{...styles.btnStyle,...btnStyle}}
         onPress={onPress}
     >
-      {!!img ? <Image tintColor={colors.white} source={img}/> : <Text style={styles.btnTextStyle}>{btnText}</Text>}
+      {!!img ? <Image tintColor={colors.white} source={img}/> : <Text style={{...styles.btnTextStyle,...btnTextStyle}}>{btnText}</Text>}
       
     </TouchableOpacity>
   )
