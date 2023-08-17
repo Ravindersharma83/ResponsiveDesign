@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
         textTransform:'uppercase',
         fontSize:scale(18),
         fontWeight:'bold',
-        color: colors.themeColor
+        // color: colors.themeColor
     },
     headerStyle: {
         backgroundColor: colors.white,

@@ -30,13 +30,13 @@ forgotView: {
 },
 forgotText: {
     fontSize: scale(16),
-    color: colors.themeColor,
+    // color: colors.themeColor,
     fontWeight: '400',
 },
 bottomView: {
     flexDirection: 'row',
     alignItems: 'center',
-    marginTop: moderateVerticalScale(72),
+    // marginTop: moderateVerticalScale(72),
     justifyContent: 'center',
     marginBottom:moderateVerticalScale(40)
 }

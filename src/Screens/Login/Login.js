@@ -7,9 +7,12 @@ import imagePath from '../../constants/imagePath'
 import ButtonComp from '../../Components/ButtonComp'
 import navigationStrings from '../../constants/navigationStrings'
 import colors from '../../styles/colors'
+import ThemeButton from '../../Components/ThemeButton'
+import { useTheme } from '../../context/ThemeContext'
 
 const Login = ({navigation}) => {
   const[isVisible,setVisible] = useState(true);
+  const {activeTheme} = useTheme();
   return (
     <View style={styles.container}>
 
@@ -40,13 +43,17 @@ const Login = ({navigation}) => {
         activeOpacity={0.7} style={styles.forgotView}
         onPress={()=>navigation.navigate(navigationStrings.FORGOT_PASSWORD)}
         >
-            <Text style={styles.forgotText} >Forgot Password ?</Text>
+            <Text style={[styles.forgotText,{color:activeTheme.themeColor}]} >Forgot Password ?</Text>
         </TouchableOpacity>
 
         <ButtonComp
             btnText={'Login'}
         />
     </View>
+    </View>
+
+    <View style={{marginVertical:moderateVerticalScale(10)}}>
+        <ThemeButton/>
     </View>
     
     <View style={styles.bottomView}>

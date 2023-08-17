@@ -5,16 +5,18 @@ import { Booking, Home, Profile } from '../Screens';
 import navigationStrings from '../constants/navigationStrings';
 import imagePath from '../constants/imagePath';
 import colors from '../styles/colors';
+import { useTheme } from '../context/ThemeContext';
 
 const BottomTab = createBottomTabNavigator();
 
 export default function TabRoutes(){
+    const {activeTheme} = useTheme();
     return(
     <BottomTab.Navigator
         screenOptions={{
             headerShown:false,
             tabBarInactiveTintColor:colors.blackOpacity50,
-            tabBarActiveTintColor:colors.themeColor
+            tabBarActiveTintColor:activeTheme.themeColor
         }}
     >
         <BottomTab.Screen 
@@ -25,7 +27,7 @@ export default function TabRoutes(){
                     return(
                         <Image
                             source={imagePath.home}
-                            style={{tintColor: focused ? colors.themeColor : colors.blackOpacity50}}
+                            style={{tintColor: focused ? activeTheme.themeColor : colors.blackOpacity50}}
                         />
                     )
                 },
@@ -40,7 +42,7 @@ export default function TabRoutes(){
                     return(
                         <Image
                             source={imagePath.booking}
-                            style={{tintColor: focused ? colors.themeColor : colors.blackOpacity50}}
+                            style={{tintColor: focused ? activeTheme.themeColor : colors.blackOpacity50}}
                         />
                     )
                 },
@@ -55,7 +57,7 @@ export default function TabRoutes(){
                     return(
                         <Image
                             source={imagePath.profile}
-                            style={{tintColor: focused ? colors.themeColor : colors.blackOpacity50}}
+                            style={{tintColor: focused ? activeTheme.themeColor : colors.blackOpacity50}}
                         />
                     )
                 },

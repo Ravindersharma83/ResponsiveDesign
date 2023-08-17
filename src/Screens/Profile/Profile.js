@@ -1,12 +1,14 @@
 import { Button, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import navigationStrings from '../../constants/navigationStrings'
+import { useTheme } from '../../context/ThemeContext'
 
 const Profile = ({navigation}) => {
+  const {activeTheme} = useTheme();
   return (
     <View style={styles.container}>
       <Text>Profile</Text>
-      <Button onPress={()=>navigation.navigate(navigationStrings.EDIT_PROFILE)} title='Edit Profile'/>
+      <Button color={activeTheme.themeColor} onPress={()=>navigation.navigate(navigationStrings.EDIT_PROFILE)} title='Change Theme'/>
     </View>
   )
 }

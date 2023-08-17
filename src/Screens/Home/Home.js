@@ -6,8 +6,10 @@ import { moderateScale, moderateVerticalScale, scale } from 'react-native-size-m
 import imagePath from '../../constants/imagePath';
 import styles from './styles';
 import ButtonComp from '../../Components/ButtonComp';
+import { useTheme } from '../../context/ThemeContext';
 
 const Home = () => {
+  const {activeTheme} = useTheme();
   const renderItem = ({item})=>{
     return(
       <View style={styles.flatStyle}>
@@ -57,13 +59,14 @@ const Home = () => {
         <View style={{flex:1}}>
           <ButtonComp 
             btnText={'Reject'}
+            transparent={true}
             btnStyle={{
               backgroundColor:colors.white,
               borderWidth:1,
-              borderColor:colors.themeColor
+              borderColor:activeTheme.themeColor
             }}
             btnTextStyle={{
-              color:colors.themeColor
+              color:activeTheme.themeColor
             }}
           />
         </View>
@@ -81,7 +84,7 @@ const Home = () => {
       <SafeAreaView style={{flex:1,backgroundColor:colors.white}}>
       <View style={styles.headerStyle}>
         <Text/>
-        <Text style={styles.headerText}>Invitation Requests </Text>
+        <Text style={[styles.headerText,{color:activeTheme.themeColor}]}>Invitation Requests </Text>
         <Image source={imagePath.notification}/>
       </View>
       
