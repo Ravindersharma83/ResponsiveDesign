@@ -9,10 +9,12 @@ import navigationStrings from '../../constants/navigationStrings'
 import colors from '../../styles/colors'
 import ThemeButton from '../../Components/ThemeButton'
 import { useTheme } from '../../context/ThemeContext'
+import { useAuth } from '../../context/AuthContext'
 
 const Login = ({navigation}) => {
   const[isVisible,setVisible] = useState(true);
   const {activeTheme} = useTheme();
+  const {loginUser} = useAuth();
   return (
     <View style={styles.container}>
 
@@ -48,6 +50,7 @@ const Login = ({navigation}) => {
 
         <ButtonComp
             btnText={'Login'}
+            onPress={()=>loginUser(true)}
         />
     </View>
     </View>
